@@ -1,7 +1,7 @@
-import { RequestHandler } from "express";
+import { RequestHandler } from 'express';
 
 export const notFound: RequestHandler = (req, res, next) => {
   res.status(404).json({
-    message: "Resource Not Found",
+    message: 'Resource Not Found',
   });
 };
