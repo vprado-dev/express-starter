@@ -1,0 +1,7 @@
+{
+  "name": "express-starter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Eliseu Videira <eliseuvideira1@gmail.com>",
+  "license": "MIT"
+}
