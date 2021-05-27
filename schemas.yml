@@ -1,0 +1,12 @@
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Internal server error
+      required:
+        - message
+    status:
+      type: object

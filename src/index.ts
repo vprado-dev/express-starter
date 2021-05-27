@@ -10,13 +10,14 @@ import { join } from 'path';
 import morgan from 'morgan';
 import { notFound } from './middlewares/notFound';
 import { exception } from './middlewares/exception';
+import openapi from '@ev-fns/openapi';
 
 const app = express();
 
 app.use(cors());
 app.use(json());
 app.use(morgan('dev'));
-
+app.use(openapi());
 const routes = readdirSync(join(__dirname, 'routes'));
 
 for (const route of routes) {
