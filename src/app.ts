@@ -14,6 +14,8 @@ app.use(cors());
 app.use(json());
 app.use(morgan('dev'));
 app.use(openapi());
+app.use(openapi({ apiName: process.env.API_NAME }));
+
 const routes = readdirSync(join(__dirname, 'routes'));
 
 for (const route of routes) {

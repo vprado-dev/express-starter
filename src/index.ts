@@ -1,12 +1,13 @@
 import dotenv from 'dotenv-safe';
-import app from './app';
 
 dotenv.config();
 
+import app from './app';
+
+const PORT = process.env.PORT || 3000;
+
 (async () => {
-  app.listen(process.env.PORT, () =>
-    console.log(`Listening at http://localhost:${process.env.PORT}`),
-  );
+  app.listen(PORT, () => console.info(`Listening at http://localhost:${PORT}`));
 })().catch((err) => {
   console.log(err);
   process.exit(1);
