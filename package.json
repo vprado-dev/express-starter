@@ -22,6 +22,7 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
+    "@ev-fns/auth": "^1.0.1",
     "@ev-fns/openapi": "^0.3.2",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",

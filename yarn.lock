@@ -45,6 +45,28 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@ev-fns/auth@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@ev-fns/auth/-/auth-1.0.1.tgz#5d6d6608e6bf97bdfbb487ffe6c1863aca3f591e"
+  integrity sha512-a/b5GaNkskRneKndZtFlA2rVjeFuRBhZxP1ry+FgrbaQjvFAZtUzMxdsOJzJx2CDH7vR8AP7a98JXxdtStJ0Dw==
+  dependencies:
+    "@ev-fns/endpoint" "^0.1.1"
+    "@ev-fns/errors" "^0.1.0"
+
+"@ev-fns/endpoint@^0.1.1":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@ev-fns/endpoint/-/endpoint-0.1.2.tgz#65b0e231453a744eeddc7b65e2eba08c607c0230"
+  integrity sha512-phi2WR4BlT7ldo2yPDGqY0vURE6sAxJRfE0tmhEBEX/bkggplxv0h8sFP6K6nsSogfCk3iyM9YSGlzOpuUFd7w==
+  dependencies:
+    express "^4.17.1"
+
+"@ev-fns/errors@^0.1.0":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@ev-fns/errors/-/errors-0.1.1.tgz#8f3cace52757524bacb5e44b63b97a2c3e3c995e"
+  integrity sha512-2yQYBnhbK1mBwkeSplBOolBhXzOg2lcxLoB0N/m/bvkWRBN4inx7AkpYUVzOM/JjJY3uhrEr9cN3AHYejWQSwQ==
+  dependencies:
+    express "^4.17.1"
+
 "@ev-fns/openapi@^0.3.2":
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/@ev-fns/openapi/-/openapi-0.3.2.tgz#bae4cc147269381698e08f1de041f8bd7651ef8e"
