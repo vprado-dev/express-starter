@@ -7,7 +7,7 @@ const router = Router();
 /**
  * GET /status
  * @tag status
- * @security bearerAuth
+ * @security BearerAuth
  * @response 204
  * @responseContent {status} 204.application/json
  * @responseContent {Error} default.application/json
