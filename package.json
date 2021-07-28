@@ -24,6 +24,7 @@
   "dependencies": {
     "@ev-fns/auth": "^1.0.1",
     "@ev-fns/openapi": "^0.3.2",
+    "@ev-fns/spawn": "^0.1.2",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
@@ -35,7 +36,9 @@
     "start": "node build/index.js",
     "build": "tsc",
     "dev": "ts-node-dev --no-notify src/index.ts",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "docker-build": "./.docker-build",
+    "docker-push": "./.docker-push"
   },
   "lint-staged": {
     "*.{js,ts}": [

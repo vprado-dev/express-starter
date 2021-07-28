@@ -78,6 +78,11 @@
     swagger-ui-express "^4.1.6"
     yaml "^1.10.2"
 
+"@ev-fns/spawn@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@ev-fns/spawn/-/spawn-0.1.2.tgz#25e0cc47dbd7c37f230c7a11494edadf948dbd7d"
+  integrity sha512-Qk79zkYq0lacHNm47b/EKrvHzuQ4AtO/UDWQBj2J98g0sh3PzEm9L2kXTkew+MeKf8TN0IFQEHTFneK6iju2hg==
+
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.5.0.tgz#1407967d4c6eecd7388f83acf1eaf4d0c6e58ef9"
