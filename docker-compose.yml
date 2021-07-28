@@ -1,9 +1,16 @@
 version: "3"
+
+networks:
+  api_network:
+
 services:
   api:
     build: .
+    image: $API_IMAGE
     env_file:
       - .env
+    networks:
+      - api_network
     ports:
       - $PORT:$PORT
     restart: always
