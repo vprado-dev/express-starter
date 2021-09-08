@@ -1,6 +1,9 @@
-node_modules/
-build/
-.env
 .git/
-*.error
-*.log
+build/
+coverage/
+node_modules/
+scripts/
+test/
+.env
+_.error
+_.log
