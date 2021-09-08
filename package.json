@@ -13,6 +13,7 @@
     "@types/node": "^16.7.13",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
+    "commander": "^8.1.0",
     "eslint": "^7.32.0",
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
@@ -24,7 +25,6 @@
   "dependencies": {
     "@ev-fns/auth": "^1.0.1",
     "@ev-fns/openapi": "^0.3.2",
-    "@ev-fns/spawn": "^0.1.2",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
@@ -37,8 +37,7 @@
     "build": "tsc",
     "dev": "ts-node-dev --no-notify src/index.ts",
     "prepare": "husky install",
-    "docker-build": "./.docker-build",
-    "docker-push": "./.docker-push"
+    "docker": "./scripts/docker.js"
   },
   "lint-staged": {
     "*.{js,ts}": [
