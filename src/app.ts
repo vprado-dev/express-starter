@@ -10,10 +10,11 @@ import openapi from "@ev-fns/openapi";
 
 const app = express();
 
+app.set("trust proxy", ["loopback", "linklocal", "uniquelocal"]);
+
 app.use(cors());
 app.use(json());
-app.use(morgan("dev"));
-app.use(openapi());
+app.use(morgan("combined", { skip: () => process.env.NODE_ENV === "test" }));
 app.use(openapi({ apiName: process.env.API_NAME }));
 
 const routes = readdirSync(join(__dirname, "routes"));
