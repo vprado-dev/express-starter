@@ -43,8 +43,7 @@ export const playersGetOne: RequestHandler = async (req, res, next) => {
     const playerFound = players.find((item) => item.id === playerId);
 
     if (!playerFound) {
-      res.status(404).json({ message: "player not found" });
-      return;
+      throw new HttpError(404, "player not found");
     }
 
     res.status(200).json(playerFound);
@@ -60,8 +59,7 @@ export const playersPatchOne: RequestHandler = async (req, res, next) => {
     const index = players.findIndex((item) => item.id === playerId);
 
     if (index === -1) {
-      res.status(404).json({ message: "player not found" });
-      return;
+      throw new HttpError(404, "player not found");
     }
 
     const player = { ...players[index], ...req.body };
