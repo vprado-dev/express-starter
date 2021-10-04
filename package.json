@@ -25,11 +25,13 @@
   "dependencies": {
     "@ev-fns/auth": "^1.0.1",
     "@ev-fns/openapi": "^0.3.2",
+    "@ev-fns/validation": "^0.1.2",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "dotenv-safe": "^8.2.0",
     "express": "^4.17.1",
+    "joi": "^17.4.2",
     "morgan": "^1.10.0"
   },
   "scripts": {

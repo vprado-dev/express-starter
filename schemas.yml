@@ -13,5 +13,61 @@ components:
           example: Internal server error
       required:
         - message
-    status:
+
+    PlayerPostBody:
       type: object
+      properties:
+        nickName:
+          type: string
+          example: crazyPotatoFighter123
+        age:
+          type: number
+          example: 18
+        level:
+          type: number
+          example: 20
+        classType:
+          type: string
+          enum: ["warrior", "wizard", "bard", "summoner"]
+          example: summoner
+        description:
+          type: string
+          example: Can summon creatures to fight for him
+    PlayersPatchOneBody:
+      type: object
+      properties:
+        nickName:
+          type: string
+          example: crazyPotatoFighter123
+        age:
+          type: number
+          example: 18
+        level:
+          type: number
+          example: 20
+        classType:
+          type: string
+          enum: ["warrior", "wizard", "bard", "summoner"]
+          example: summoner
+        description:
+          type: string
+          example: Can summon creatures to fight for him
+    Player:
+      type: object
+      properties:
+        nickName:
+          type: string
+          example: crazyPotatoFighter123
+        age:
+          type: number
+          example: 18
+        level:
+          type: number
+          example: 20
+        classType:
+          type: string
+          enum: ["warrior", "wizard", "bard", "summoner"]
+          example: summoner
+        description:
+          type: string
+          example: Can summon creatures to fight for him
