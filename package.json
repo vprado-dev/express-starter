@@ -24,6 +24,8 @@
   },
   "dependencies": {
     "@ev-fns/auth": "^1.0.1",
+    "@ev-fns/endpoint": "^1.0.0",
+    "@ev-fns/errors": "^0.1.1",
     "@ev-fns/openapi": "^0.3.2",
     "@ev-fns/validation": "^0.1.2",
     "body-parser": "^1.19.0",

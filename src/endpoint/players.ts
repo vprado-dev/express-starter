@@ -1,3 +1,5 @@
+import { endpoint } from "@ev-fns/endpoint";
+import { HttpError } from "@ev-fns/errors";
 import { RequestHandler } from "express";
 
 interface PlayerProps {
@@ -16,58 +18,71 @@ const id = (() => {
   return () => ++_id;
 })();
 
-export const playersPostOne: RequestHandler = async (req, res) => {
-  const player = req.body;
+export const playersPostOne: RequestHandler = async (req, res, next) => {
+  try {
+    const player = req.body;
 
-  const playerToInsert = { id: id(), ...player };
+    const playerToInsert = { id: id(), ...player };
 
-  players.push(playerToInsert);
+    players.push(playerToInsert);
 
-  res.status(201).json(playerToInsert);
+    res.status(201).json(playerToInsert);
+  } catch (err) {
+    next(err);
+  }
 };
 
 export const playersGetMany: RequestHandler = async (req, res) => {
   res.status(200).json(players);
 };
 
-export const playersGetOne: RequestHandler = async (req, res) => {
-  const { playerId } = req.params as any;
+export const playersGetOne: RequestHandler = async (req, res, next) => {
+  try {
+    const { playerId } = req.params as any;
 
-  const playerFound = players.find((item) => item.id === playerId);
+    const playerFound = players.find((item) => item.id === playerId);
 
-  if (!playerFound) {
-    res.status(404).json({ message: "player not found" });
-    return;
+    if (!playerFound) {
+      res.status(404).json({ message: "player not found" });
+      return;
+    }
+
+    res.status(200).json(playerFound);
+  } catch (err) {
+    next(err);
   }
-
-  res.status(200).json(playerFound);
 };
 
-export const playersPatchOne: RequestHandler = async (req, res) => {
+export const playersPatchOne: RequestHandler = async (req, res, next) => {
+  try {
+    const { playerId } = req.params as any;
+
+    const index = players.findIndex((item) => item.id === playerId);
+
+    if (index === -1) {
+      res.status(404).json({ message: "player not found" });
+      return;
+    }
+
+    const player = { ...players[index], ...req.body };
+
+    players[index] = player;
+
+    res.status(200).json(player);
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const playersDeleteOne = endpoint(async (req, res) => {
   const { playerId } = req.params as any;
 
   const index = players.findIndex((item) => item.id === playerId);
-
   if (index === -1) {
-    res.status(404).json({ message: "player not found" });
-  }
-
-  const player = { ...players[index], ...req.body };
-
-  players[index] = player;
-
-  res.status(200).json(player);
-};
-
-export const playersDeleteOne: RequestHandler = async (req, res) => {
-  const { playerId } = req.params as any;
-
-  const index = players.findIndex((item) => item.id === playerId);
-  if (index === -1) {
-    res.status(404).json({ message: "player not found" });
+    throw new HttpError(404, "not found");
   }
 
   players.splice(index, 1);
 
   res.status(204).end();
-};
+});

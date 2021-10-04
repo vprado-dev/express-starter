@@ -4,9 +4,8 @@ import { json } from "body-parser";
 import { readdirSync } from "fs";
 import { join } from "path";
 import morgan from "morgan";
-import { notFound } from "./middlewares/notFound";
-import { exception } from "./middlewares/exception";
 import openapi from "@ev-fns/openapi";
+import { notFound, exception } from "@ev-fns/errors";
 
 const app = express();
 

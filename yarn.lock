@@ -72,6 +72,11 @@
   dependencies:
     express "^4.17.1"
 
+"@ev-fns/endpoint@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@ev-fns/endpoint/-/endpoint-1.0.0.tgz#49abbc5da16ad1a6344378abefb58ecb387673cc"
+  integrity sha512-Dt8BE/3e4YefBPxRlNfAt1pIyQ2us4qbkSDZM6mEgrL8Qt2khJTsLbNAB+4UoBQD4aQqh0U0mdTZhaouF9/WQg==
+
 "@ev-fns/errors@^0.1.0", "@ev-fns/errors@^0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@ev-fns/errors/-/errors-0.1.1.tgz#8f3cace52757524bacb5e44b63b97a2c3e3c995e"
