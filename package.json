@@ -44,9 +44,11 @@
     "docker": "./scripts/docker.js"
   },
   "lint-staged": {
-    "*.{js,ts}": [
-      "eslint",
+    "*.{js,ts,json}": [
       "prettier --check"
+    ],
+    "*.ts": [
+      "eslint --max-warnings=0"
     ]
   }
 }
