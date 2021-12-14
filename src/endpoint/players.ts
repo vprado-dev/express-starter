@@ -1,6 +1,6 @@
-import { endpoint } from "@ev-fns/endpoint";
 import { HttpError } from "@ev-fns/errors";
 import { RequestHandler } from "express";
+import { endpoint } from "../functions/endpoint";
 
 interface PlayerProps {
   id: number;
@@ -52,25 +52,21 @@ export const playersGetOne: RequestHandler = async (req, res, next) => {
   }
 };
 
-export const playersPatchOne: RequestHandler = async (req, res, next) => {
-  try {
-    const { playerId } = req.params as any;
+export const playersPatchOne: RequestHandler = endpoint(async (req, res) => {
+  const { playerId } = req.params as any;
 
-    const index = players.findIndex((item) => item.id === playerId);
+  const index = players.findIndex((item) => item.id === playerId);
 
-    if (index === -1) {
-      throw new HttpError(404, "player not found");
-    }
-
-    const player = { ...players[index], ...req.body };
-
-    players[index] = player;
-
-    res.status(200).json(player);
-  } catch (err) {
-    next(err);
+  if (index === -1) {
+    throw new HttpError(404, "player not found");
   }
-};
+
+  const player = { ...players[index], ...req.body };
+
+  players[index] = player;
+
+  res.status(200).json(player);
+});
 
 export const playersDeleteOne = endpoint(async (req, res) => {
   const { playerId } = req.params as any;
