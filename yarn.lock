@@ -29,48 +29,6 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@ev-fns/auth@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@ev-fns/auth/-/auth-1.0.1.tgz#5d6d6608e6bf97bdfbb487ffe6c1863aca3f591e"
-  integrity sha512-a/b5GaNkskRneKndZtFlA2rVjeFuRBhZxP1ry+FgrbaQjvFAZtUzMxdsOJzJx2CDH7vR8AP7a98JXxdtStJ0Dw==
-  dependencies:
-    "@ev-fns/endpoint" "^0.1.1"
-    "@ev-fns/errors" "^0.1.0"
-
-"@ev-fns/endpoint@^0.1.1", "@ev-fns/endpoint@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@ev-fns/endpoint/-/endpoint-0.1.2.tgz#65b0e231453a744eeddc7b65e2eba08c607c0230"
-  integrity sha512-phi2WR4BlT7ldo2yPDGqY0vURE6sAxJRfE0tmhEBEX/bkggplxv0h8sFP6K6nsSogfCk3iyM9YSGlzOpuUFd7w==
-  dependencies:
-    express "^4.17.1"
-
-"@ev-fns/errors@^0.1.0", "@ev-fns/errors@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@ev-fns/errors/-/errors-0.1.1.tgz#8f3cace52757524bacb5e44b63b97a2c3e3c995e"
-  integrity sha512-2yQYBnhbK1mBwkeSplBOolBhXzOg2lcxLoB0N/m/bvkWRBN4inx7AkpYUVzOM/JjJY3uhrEr9cN3AHYejWQSwQ==
-  dependencies:
-    express "^4.17.1"
-
-"@ev-fns/openapi@^0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@ev-fns/openapi/-/openapi-0.3.2.tgz#bae4cc147269381698e08f1de041f8bd7651ef8e"
-  integrity sha512-mSr+rbrA0gBXvbYfpwr5LQbgw/OU/TlgFs4n35wTWNoXBqbdRczjju+2lmWhX6uey8SjwSmYdTG/c+29fLGKyA==
-  dependencies:
-    app-root-path "^3.0.0"
-    express "^4.17.1"
-    openapi-comment-parser "^1.0.0"
-    swagger-ui-express "^4.1.6"
-    yaml "^1.10.2"
-
-"@ev-fns/validation@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@ev-fns/validation/-/validation-0.1.2.tgz#85acfc4df9ed51c53b5022972cfe1e8ad5863ece"
-  integrity sha512-bhCsWGNz9rRX0E92S013v1dT9zpD8XtVSf82pBAzHMdx0ZbvnHCGbEm73VSn/qTHW+fQwliLxbCWQzMUlKpIOQ==
-  dependencies:
-    "@ev-fns/endpoint" "^0.1.2"
-    "@ev-fns/errors" "^0.1.1"
-    joi "^17.3.0"
-
 "@hapi/hoek@^9.0.0":
   version "9.2.1"
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.2.1.tgz#9551142a1980503752536b5050fd99f4a7f13b17"
@@ -155,6 +113,11 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.2.tgz#423c77877d0569db20e1fc80885ac4118314010e"
   integrity sha512-eZxlbI8GZscaGS7kkc/trHTT5xgrjH3/1n2JDwusC9iahPKWMRvRjJSAN5mCXviuTGQ/lHnhvv8Q1YTpnfz9gA==
 
+"@types/app-root-path@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@types/app-root-path/-/app-root-path-1.2.4.tgz#a78b703282b32ac54de768f5512ecc3569919dc7"
+  integrity sha1-p4twMoKzKsVN52j1US7MNWmRncc=
+
 "@types/body-parser@*", "@types/body-parser@^1.19.2":
   version "1.19.2"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.19.2.tgz#aea2059e28b7658639081347ac4fab3de166e6f0"
@@ -191,7 +154,7 @@
     "@types/qs" "*"
     "@types/range-parser" "*"
 
-"@types/express@^4.17.13":
+"@types/express@*", "@types/express@^4.17.13":
   version "4.17.13"
   resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.13.tgz#a76e2995728999bab51a33fabce1d705a3709034"
   integrity sha512-6bSZTPaTIACxn48l50SR+axgrqm6qXFIxrdAKaG6PaJk3+zuUr35hBlgT7vOmJcum+OEaIBLtHV/qloEAFITeA==
@@ -250,6 +213,14 @@
   version "0.0.30"
   resolved "https://registry.yarnpkg.com/@types/strip-json-comments/-/strip-json-comments-0.0.30.tgz#9aa30c04db212a9a0649d6ae6fd50accc40748a1"
   integrity sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==
+
+"@types/swagger-ui-express@^4.1.3":
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/@types/swagger-ui-express/-/swagger-ui-express-4.1.3.tgz#7adbbbf5343b45869debef1e9ff39c9ba73e380f"
+  integrity sha512-jqCjGU/tGEaqIplPy3WyQg+Nrp6y80DCFnDEAvVKWkJyv0VivSSDCChkppHRHAablvInZe6pijDFMnavtN0vqA==
+  dependencies:
+    "@types/express" "*"
+    "@types/serve-static" "*"
 
 "@typescript-eslint/eslint-plugin@^5.7.0":
   version "5.7.0"
@@ -1242,7 +1213,7 @@ isexe@^2.0.0:
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
   integrity sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
 
-joi@^17.3.0, joi@^17.5.0:
+joi@^17.5.0:
   version "17.5.0"
   resolved "https://registry.yarnpkg.com/joi/-/joi-17.5.0.tgz#7e66d0004b5045d971cf416a55fb61d33ac6e011"
   integrity sha512-R7hR50COp7StzLnDi4ywOXHrBrgNXuUUfJWIR5lPY5Bm/pOD3jZaTwpluUXVLRWcoWZxkrHBBJ5hLxgnlehbdw==
@@ -1901,7 +1872,7 @@ swagger-ui-dist@>3.52.5:
   resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-4.1.3.tgz#2be9f9de9b5c19132fa4a5e40933058c151563dc"
   integrity sha512-WvfPSfAAMlE/sKS6YkW47nX/hA7StmhYnAHc6wWCXNL0oclwLj6UXv0hQCkLnDgvebi0MEV40SJJpVjKUgH1IQ==
 
-swagger-ui-express@^4.1.6:
+swagger-ui-express@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/swagger-ui-express/-/swagger-ui-express-4.2.0.tgz#98797cc147071170670415c9193951cfbde173bd"
   integrity sha512-znrHTwh9UpvsjqgWopA4noIet7mi7UGuIYZ465YfUDKQ5Dpas0jxnkfUKCo+0aB17YCBv26AhIjiQYDV4uvJFA==

@@ -1,6 +1,6 @@
-import { HttpError } from "@ev-fns/errors";
 import { RequestHandler } from "express";
 import { endpoint } from "../functions/endpoint";
+import { HttpError } from "../utils/httpError";
 
 interface PlayerProps {
   id: number;

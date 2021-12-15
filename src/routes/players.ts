@@ -1,4 +1,3 @@
-import { body, params } from "@ev-fns/validation";
 import { Router } from "express";
 import {
   playersDeleteOne,
@@ -8,6 +7,7 @@ import {
   playersPostOne,
 } from "../endpoint/players";
 import { auth } from "../middlewares/auth";
+import { body, params } from "../utils/requestsValidations";
 import {
   playersGetOneParams,
   playersPatchOneBody,

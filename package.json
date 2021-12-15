@@ -5,12 +5,14 @@
   "author": "Vinicius Prado <vinicavagna@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/app-root-path": "^1.2.4",
     "@types/body-parser": "^1.19.2",
     "@types/cors": "^2.8.12",
     "@types/dotenv-safe": "^8.1.2",
     "@types/express": "^4.17.13",
     "@types/morgan": "^1.9.3",
     "@types/node": "^16.11.13",
+    "@types/swagger-ui-express": "^4.1.3",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
     "commander": "^8.3.0",
@@ -23,17 +25,16 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@ev-fns/auth": "^1.0.1",
-    "@ev-fns/errors": "^0.1.1",
-    "@ev-fns/openapi": "^0.3.2",
-    "@ev-fns/validation": "^0.1.2",
+    "app-root-path": "^3.0.0",
     "body-parser": "^1.19.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "dotenv-safe": "^8.2.0",
     "express": "^4.17.1",
     "joi": "^17.5.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "openapi-comment-parser": "^1.0.0",
+    "swagger-ui-express": "^4.2.0"
   },
   "scripts": {
     "start": "node build/index.js",
