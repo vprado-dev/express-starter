@@ -9,6 +9,8 @@ interface PlayerProps {
   level: number;
   classType: string;
   description: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 const players: PlayerProps[] = [];
@@ -18,19 +20,20 @@ const id = (() => {
   return () => ++_id;
 })();
 
-export const playersPostOne: RequestHandler = async (req, res, next) => {
-  try {
-    const player = req.body;
+export const playersPostOne = endpoint(async (req, res) => {
+  const player = req.body;
 
-    const playerToInsert = { id: id(), ...player };
+  const playerToInsert: PlayerProps = {
+    id: id(),
+    ...player,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  };
 
-    players.push(playerToInsert);
+  players.push(playerToInsert);
 
-    res.status(201).json(playerToInsert);
-  } catch (err) {
-    next(err);
-  }
-};
+  res.status(201).json(playerToInsert);
+});
 
 export const playersGetMany: RequestHandler = async (req, res) => {
   res.status(200).json(players);
@@ -61,7 +64,11 @@ export const playersPatchOne: RequestHandler = endpoint(async (req, res) => {
     throw new HttpError(404, "player not found");
   }
 
-  const player = { ...players[index], ...req.body };
+  const player: PlayerProps = {
+    ...players[index],
+    ...req.body,
+    updatedAt: new Date(),
+  };
 
   players[index] = player;
 
