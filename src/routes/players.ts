@@ -31,7 +31,6 @@ router.post("/players", auth, body(playersPostOneBody), playersPostOne);
 /**
  * GET /players
  * @tag Players
- * @security BearerAuth
  * @response 200
  * @responseContent {Player[]} 200.application/json
  * @response default

@@ -10,7 +10,6 @@ interface PlayerProps {
   classType: string;
   description: string;
   createdAt: Date;
-  updatedAt: Date;
 }
 
 const players: PlayerProps[] = [];
@@ -27,7 +26,6 @@ export const playersPostOne = endpoint(async (req, res) => {
     id: id(),
     ...player,
     createdAt: new Date(),
-    updatedAt: new Date(),
   };
 
   players.push(playerToInsert);
@@ -67,7 +65,6 @@ export const playersPatchOne: RequestHandler = endpoint(async (req, res) => {
   const player: PlayerProps = {
     ...players[index],
     ...req.body,
-    updatedAt: new Date(),
   };
 
   players[index] = player;
