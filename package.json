@@ -46,7 +46,7 @@
     "build": "tsc",
     "dev": "ts-node-dev --no-notify src/index.ts",
     "prepare": "husky install",
-    "docker": "./scripts/docker.js",
+    "docker": "./scripts/docker",
     "coverage": "jest --coverage && xdg-open ./coverage/lcov-report/index.html &>/dev/null",
     "test": "jest",
     "watch": "jest --watch"

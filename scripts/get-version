@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+script_name="$(basename "$0")"
+
+usage() {
+  echo "$script_name: usage: $script_name ROOT_DIRECTORY" >&2
+}
+
+exit_with_error() {
+  echo "$script_name: error: $1" >&2
+  usage
+  exit 1
+}
+
+if [ "$#" != "1" ]; then
+  exit_with_error "invalid number of arguments, expected \"1\", recieved \"$#\""
+fi
+
+_package_json="$1/package.json"
+
+if ! [ -r "$_package_json" ]; then
+  exit_with_error "file \"$_package_json\" doesn't exists or is not readable"
+fi
+
+grep "version" "$_package_json" |
+  sed -E 's/\s*"version": "([^"]+)",?/\1/'

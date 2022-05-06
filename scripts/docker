@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+set -e
+
+script_name="$(basename "$0")"
+script_dir="$(realpath "$(dirname "$0")")"
+
+usage() {
+  echo "$script_name: usage: $script_name [ build | push ]" >&2
+}
+
+exit_with_error() {
+  echo "$script_name: error: $1" >&2
+  usage
+  exit 1
+}
+
+docker_build() {
+  _script="$script_dir/docker-build"
+
+  if ! "$_script"; then
+    exit_with_error "failed to run $_script"
+  fi
+}
+
+docker_push() {
+  _script="$script_dir/docker-push"
+
+  if ! "$_script"; then
+    exit_with_error "failed to run $_script"
+  fi
+}
+
+if [ "$#" != "1" ]; then
+  exit_with_error "invalid number of arguments"
+fi
+
+command="$1"
+
+if [ "$command" != "build" ] && [ "$command" != "push" ]; then
+  exit_with_error "invalid argument, expected [ build | push ], recieved \"$command\""
+fi
+
+if [ "$command" == "build" ]; then
+  docker_build
+fi
+
+if [ "$command" == "push" ]; then
+  docker_push
+fi
