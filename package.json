@@ -49,7 +49,9 @@
     "docker": "./scripts/docker",
     "coverage": "jest --coverage && xdg-open ./coverage/lcov-report/index.html &>/dev/null",
     "test": "jest",
-    "watch": "jest --watch"
+    "watch": "jest --watch",
+    "format": "prettier --write 'src/**/*'",
+    "lint": "eslint --max-warnings=0 'src/**/*'"
   },
   "lint-staged": {
     "*.{js,ts,json}": [
