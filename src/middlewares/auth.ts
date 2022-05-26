@@ -21,4 +21,4 @@ const createInternalAuth = (token: string) =>
     next();
   });
 
-export const auth = createInternalAuth(process.env.API_TOKEN);
+export const auth = createInternalAuth(process.env.API_TOKEN!);
