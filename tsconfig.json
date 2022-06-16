@@ -4,13 +4,13 @@
     "module": "CommonJS",
     "rootDir": "src",
     "outDir": "build",
-    "removeComments": true,
     "strict": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
   },
+  "files": ["./src/env.d.ts"],
   "include": ["src"],
   "ts-node": {
     "files": true

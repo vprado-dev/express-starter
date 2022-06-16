@@ -7,6 +7,8 @@ declare namespace NodeJS {
     // Api
     API_NAME: string;
     API_TOKEN: string;
-    API_IMAGE: string;
+
+    // Docker
+    DOCKER_IMAGE: string;
   }
 }

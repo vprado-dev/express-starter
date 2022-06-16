@@ -26,7 +26,8 @@
     "ts-jest": "^28.0.5",
     "ts-node": "^10.8.1",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^4.7.3"
+    "typescript": "^4.7.3",
+    "uglify-js": "^3.16.0"
   },
   "dependencies": {
     "@types/supertest": "^2.0.12",
@@ -39,7 +40,8 @@
     "joi": "^17.6.0",
     "morgan": "^1.10.0",
     "openapi-comment-parser": "^1.0.0",
-    "swagger-ui-express": "^4.4.0"
+    "swagger-ui-express": "^4.4.0",
+    "yaml": "^2.1.1"
   },
   "scripts": {
     "start": "node build/index.js",
@@ -50,6 +52,8 @@
     "coverage": "jest --coverage && xdg-open ./coverage/lcov-report/index.html &>/dev/null",
     "test": "jest",
     "watch": "jest --watch",
+    "postbuild": "find build -iname \"*.js\" -exec yarn uglifyjs {} --rename --toplevel --comments '/^\\*/' --output {} \\;",
+    "prebuild": "rm -rf build",
     "format": "prettier --write 'src/**/*'",
     "lint": "eslint --max-warnings=0 'src/**/*'"
   },

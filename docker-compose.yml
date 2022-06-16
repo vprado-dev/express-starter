@@ -1,20 +1,15 @@
 version: "3"
 
-networks:
-  api_network:
-
 services:
   api:
     build: .
-    image: $API_IMAGE
+    image: $DOCKER_IMAGE
     env_file:
       - .env
-    networks:
-      - api_network
     logging:
-      driver: json-file
+      driver: json-files
       options:
-        max-size: 50m
+        max-size: 10m
     ports:
       - $PORT:$PORT
     restart: always
