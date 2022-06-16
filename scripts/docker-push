@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
+##
+
+set -e
+
 script_name="$(basename "$0")"
 script_dir="$(realpath "$(dirname "$0")")"
-
-root_dir="$(realpath "$script_dir/..")"
-
-env_file="$root_dir/.env"
+script_usage="$script_name"
 
 usage() {
-  echo "$script_name: usage: $script_name" >&2
+  echo "$script_name: usage: $script_usage" >&2
 }
 
 exit_with_error() {
@@ -16,6 +17,12 @@ exit_with_error() {
   usage
   exit 1
 }
+
+if [ "$#" != "0" ]; then
+  exit_with_error "invalid number of arguments, expected \"0\", recieved \"$#\""
+fi
+
+##
 
 load_env() {
   IFS=$'\n'
@@ -32,13 +39,20 @@ push_images() {
   )
 }
 
+##
+
+root_dir="$(realpath "$script_dir/..")"
+
+env_file="$root_dir/.env"
+
 if ! [ -r "$env_file" ]; then
   exit_with_error "failed to read .env file"
 fi
 
 load_env
 
-docker_image_name="$API_IMAGE"
+docker_image_name="$DOCKER_IMAGE"
+
 package_version="$("$script_dir/get-version" "$root_dir")"
 
 push_images "$root_dir" "$docker_image_name" "$package_version"

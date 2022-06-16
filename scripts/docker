@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 
+##
+
 set -e
 
 script_name="$(basename "$0")"
 script_dir="$(realpath "$(dirname "$0")")"
+script_usage="$script_name [ build | push ]"
 
 usage() {
-  echo "$script_name: usage: $script_name [ build | push ]" >&2
+  echo "$script_name: usage: $script_usage" >&2
 }
 
 exit_with_error() {
@@ -14,6 +17,12 @@ exit_with_error() {
   usage
   exit 1
 }
+
+if [ "$#" != "1" ]; then
+  exit_with_error "invalid number of arguments, expected \"1\", recieved \"$#\""
+fi
+
+##
 
 docker_build() {
   _script="$script_dir/docker-build"
@@ -31,9 +40,7 @@ docker_push() {
   fi
 }
 
-if [ "$#" != "1" ]; then
-  exit_with_error "invalid number of arguments"
-fi
+##
 
 command="$1"
 
